@@ -1,6 +1,7 @@
 import React from 'react';
 import { Platform } from 'react-native';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
+import Meteor from 'react-native-meteor';
 
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
@@ -18,6 +19,8 @@ const HomeStack = createStackNavigator(
   },
   config
 );
+
+Meteor.connect('ws://vincet.herokuapp.com/websocket');
 
 HomeStack.navigationOptions = {
   tabBarLabel: 'Home',
